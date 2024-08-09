@@ -6,17 +6,7 @@ export interface RootState {
     auth: {
         userInfo: AuthInterface
     }
-    // post:{
-    //     myPosts:[]
-    //     savedPosts:[]
-    //     newPost:[]
-    //     loadedPosts:[]
-    //     lastPost:{}
-    // }
-    // connections:{
-    //     followers :[]
-    //     followings : FollowingsInterface[]
-    // }
+   
 }
 
 const rootReducer = combineReducers({

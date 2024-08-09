@@ -1,5 +1,5 @@
 import { Reorder } from "framer-motion";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { PasswordDataInterface } from "../../Interface/Password";
 
 import SinglePassword from "../Modal/SinglePassword";
@@ -7,11 +7,7 @@ import SinglePassword from "../Modal/SinglePassword";
 function RenderGroups({ savedPasswords }: { savedPasswords: PasswordDataInterface[] }) {
   const [items, setItems] = useState(savedPasswords);
 
-  useEffect(() => {
-    console.log("render group");
-    console.log("render ", savedPasswords);
-  });
-
+ 
   const handleDelete =async (id: string) => {
     setItems(items.filter(item => item.id !== id));
     

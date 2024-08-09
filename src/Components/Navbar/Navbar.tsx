@@ -6,7 +6,7 @@ import { AnimatePresence } from "framer-motion";
 
 import { auth,signOut } from "../../Firebase/Firebase";
 
-import ModalFramerMotion from "../Modal";
+import ModalFramerMotion from "../FramerMotio/Modal";
 import Modal from "../Modal/Modal";
 import { logout } from "../../Store/Slice/AuthSlice";
 
@@ -25,7 +25,7 @@ const Navbar = () => {
           await signOut(auth);
           console.log('User logged out');
           dispatch(logout())
-          // Optionally, redirect the user or perform any other action after logout
+          setDropdownVisible(false)
         } catch (error) {
           console.error('Error logging out: ', error);
         }

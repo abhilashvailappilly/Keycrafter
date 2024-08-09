@@ -1,8 +1,7 @@
-import React, { ReactNode } from 'react';
-import { Outlet } from 'react-router-dom';
+import { ReactNode } from 'react';
 import NavbarContainer from '../Components/Navbar/NavbarContainer';
-import BottomNavbarContainer from '../Components/BottomNavbar/BottomNavbarContainer';
 import { Toaster } from 'react-hot-toast';
+import BottomNavbarContainer from '../Components/BottomNavbar/BottomNavbarContainer';
 
 const Layout = ({children}:{children:ReactNode}) => {
   return (
