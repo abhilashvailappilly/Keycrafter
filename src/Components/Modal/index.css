@@ -1,0 +1,18 @@
+.modalkk {
+    width: clamp(50%, 700px, 90%);
+    height: min(50%, 300px);
+    /* margin: auto; */
+    padding: 2rem;
+    background: red !important; /* Ensure a contrasting background */
+    border: 2px solid blue !important; /* Add a blue border */
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem; /* Set a readable font size */
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Slightly darken the backdrop */
+}
