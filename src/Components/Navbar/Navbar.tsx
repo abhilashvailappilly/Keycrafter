@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { RootState } from "../../Store/Store";
@@ -6,9 +6,11 @@ import { AnimatePresence } from "framer-motion";
 
 import { auth,signOut } from "../../Firebase/Firebase";
 
-import ModalFramerMotion from "../FramerMotio/Modal";
-import Modal from "../Modal/Modal";
+const ModalFramerMotion = lazy(() => import('../FramerMotio/Modal'));
+const Modal = lazy(() => import('../Modal/Modal'));
+
 import { logout } from "../../Store/Slice/AuthSlice";
+import { HashLoader } from "react-spinners";
 
 const Navbar = () => {
     const dispatch = useDispatch()
@@ -117,9 +119,15 @@ const Navbar = () => {
                 
                 <AnimatePresence initial={false} onExitComplete={() => null} mode={'wait'}>
                     {modal && (
+                          <Suspense fallback={<div className="w-screen h-screen flex items-center justify-center"><HashLoader color="#36d7b7"/></div>}>
+                         
                         <ModalFramerMotion text={"User Information"} handleClose={() => showModal(false)}>
+                          <Suspense fallback={<div className="w-screen h-screen flex items-center justify-center"><HashLoader color="#36d7b7"/></div>}>
                           <Modal/>
+                                
+                            </Suspense>
                         </ModalFramerMotion>
+                       </Suspense>
                     )}
                 </AnimatePresence>
             </div>

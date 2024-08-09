@@ -1,6 +1,5 @@
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { useEffect, useState } from 'react';
-// import { XIcon } from '@heroicons/react/solid';
 
 interface ToastProps {
   message: string;

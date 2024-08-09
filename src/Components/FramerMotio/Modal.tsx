@@ -18,7 +18,7 @@ const dropIn = {
     exit: { y: "-100vh", opacity: 0, transition: { duration: 0.3 } },
 };
 
-const ModalFramerMotion = ({ handleClose, text,children }: ModalInterface) => {
+const ModalFramerMotion = ({ handleClose,children }: ModalInterface) => {
     useEffect(() => {
         console.log("Modal component mounted");
     }, []);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import RenderGroups from "../FramerMotio/RenderGroups";
 import { RootState } from '../../Store/Store';
 import { useSelector } from 'react-redux';
@@ -13,10 +13,7 @@ const Modal = () => {
     fetch()
   },[])
   const fetch = async()=>{
-    console.log("fetch worked")
     const passwordsCollection = collection(db, "passwords");
-    console.log("passwordsCollection: ", passwordsCollection);
-console.log('userinfo',userInfo)
     const userPasswordsQuery = query(passwordsCollection, where("userId", "==", userInfo.uid));
 
     const passwordsSnapshot = await getDocs(userPasswordsQuery);
@@ -30,8 +27,6 @@ console.log('userinfo',userInfo)
               
           }));
           setSavedPasswords(passwordsList)
-            // console.log("Passwords: ", passwordsSnapshot.docs[0].getData());
-            console.log("Passwords: ", passwordsList);
   }
   return (
     <div className="w-full bg-base-300 h-full no-scrollbar">
@@ -44,7 +39,6 @@ console.log('userinfo',userInfo)
         <span className="dark:text-green-100 text-black text-3xl font-bold">{userInfo?.name || "Guest User"}</span>
     </div>
     <div className="h-4/6 w-full  overflow-scroll no-scrollbarr ">
-        {/* Replace with actual content */}
      {savedPasswords.length > 0 ? <RenderGroups savedPasswords={savedPasswords}/> :<span className='w-full font-extrabold h-full flex justify-center items-center  '>No  password's availble</span>}
     </div>
 </div>

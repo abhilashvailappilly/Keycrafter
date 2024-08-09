@@ -1,8 +1,8 @@
 import {motion} from 'framer-motion'
 import { PasswordDataInterface } from '../../Interface/Password'
 import { FaCopy, FaTrash } from 'react-icons/fa'
-import { Toaster, toast } from 'react-hot-toast';
-import { auth,deleteDoc,doc,query,where, db, GoogleAuthProvider, signInWithPopup, collection, addDoc } from '../../Firebase/Firebase'; // Adjust the path as needed
+import {  toast } from 'react-hot-toast';
+import { deleteDoc,doc, db } from '../../Firebase/Firebase'; // Adjust the path as needed
 
 const SinglePassword = ({password,action} : {password:PasswordDataInterface,action:(id:string)=>void}) => {
 
